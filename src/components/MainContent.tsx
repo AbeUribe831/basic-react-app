@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import "../converted-css/MainContent.css"
+import "../scss/MainContent.scss"
 import { Post } from "../interface/Post.interface";
 import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
