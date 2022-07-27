@@ -1,0 +1,33 @@
+@media (min-width: 0px) {
+  .FlexContainer {
+    flex-grow: 0;
+    flex-direction: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 16px;
+  }
+  .ListWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: -40px;
+  }
+}
+@media (min-width: 600px) {
+  .FlexContainer {
+    flex-grow: 0;
+    flex-direction: 33.33%;
+    max-width: 33.33%;
+    box-sizing: border-box;
+  }
+  .ListWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=PostList.css.map */

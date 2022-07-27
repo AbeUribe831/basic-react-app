@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Post } from "../interface/Post.interface";
-import "../css/CurrentPost.css"
+import "../converted-css/CurrentPost.css"
 
 export function CurrentPost(props: PropsWithChildren<{post: Post}>) {
     return (

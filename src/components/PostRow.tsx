@@ -1,5 +1,5 @@
 import { Post } from '../interface/Post.interface';
-import '../css/PostRow.css'
+import '../converted-css/PostRow.css'
 
 interface PostAsProp {
     post: Post;

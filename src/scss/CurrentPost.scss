@@ -1,0 +1,51 @@
+@mixin postBody() {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px;
+    overflow: hidden;
+    text-align: left;
+    padding: 16px 16px 24px 16px;
+}
+@mixin flexWidth($width-percent) {
+    flex-basis: $width-percent;
+    width: $width-percent;
+    flex-grow: 0;
+}
+
+@media (min-width: 0px) {
+    .postBody {
+        @include postBody();
+    }
+    .postContainer {
+        @include flexWidth(100%);
+        padding-top: 24px;
+    }
+    .innerContainer {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 1%;
+    }
+}
+
+@media (min-width: 600px) {
+    .postBody {
+        @include postBody();
+        border-radius: 4px;
+    }
+    .postContainer {
+        @include flexWidth(66.66%);
+        padding: 16px 0px 16px 0px;
+    }
+    .innerContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    }
+}
+
+.postTitle {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    padding: 16px;
+}
