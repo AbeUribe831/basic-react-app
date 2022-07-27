@@ -1,16 +1,16 @@
 import axios from "axios";
-import { PropsWithChildren, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import React, { PropsWithChildren, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import "../css/MainContent.css"
 import { Post } from "../interface/Post.interface";
 import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
 
-
 const postUrl = 'https://jsonplaceholder.typicode.com/posts';
 export function MainContent(props: PropsWithChildren) {
     const { postId } = useParams();
-
+    const navigate = useNavigate();
+    
     const [posts, setPosts] = useState<Post[]>([]);
     useEffect(() => {
         axios.get(postUrl).then(response => {
@@ -27,14 +27,22 @@ export function MainContent(props: PropsWithChildren) {
     }, []);
     
     const [currentId, setCurrentId] = useState<number>(0);
+
     useEffect(() => {
         const id = postId ? parseInt(postId) : 0
         setCurrentId(id)
     }, [postId]);
 
+    const handleOnClickRow = (event: React.MouseEvent<HTMLLIElement>) => {
+        const idOfRow = event.currentTarget.value;
+        setCurrentId(idOfRow);
+        navigate(`/${idOfRow}`);    
+    }
     return (
         <div className="mainBody">
-            <PostList posts={posts}/> 
+            <PostList 
+                posts={posts}
+                handleOnClick={handleOnClickRow}/> 
             {posts.length!==0 && <CurrentPost post={posts[currentId]}/>}
         </div>
     )

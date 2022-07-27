@@ -17,6 +17,8 @@ ul {
         flex-basis: 100%;
         width: 100%;
         margin-left:27px;
+        padding-left: 0;
+        cursor: pointer;
 }   
 }
 
@@ -30,10 +32,32 @@ ul {
         text-align-last: left;
         margin-left: 0;
         padding-left: 0;
+        cursor: pointer;
     }
 }
 .rowIndex {
     align-self: center;
     color: rgba(0, 0, 0, 0.54);
     min-width: 56px;
+}
+
+.RowContainer:hover {
+    background-color: rgb(245,245,245);
+}
+.RowContainer:active {
+    background-color: rgb(225,225,225);
+    transition-property: background-color;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes RowContainer {
+    from {
+        opacity: 1;
+        transform: scale(0)
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
 }
