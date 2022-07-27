@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "../css/MainContent.css"
 import { Post } from "../interface/Post.interface";
@@ -7,7 +7,7 @@ import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
 
 const postUrl = 'https://jsonplaceholder.typicode.com/posts';
-export function MainContent(props: PropsWithChildren) {
+export function MainContent() {
     const { postId } = useParams();
     const navigate = useNavigate();
     
@@ -24,10 +24,9 @@ export function MainContent(props: PropsWithChildren) {
             }
             setPosts(postsFromData);
         })
-    }, []);
+    }, [posts.length]);
     
     const [currentId, setCurrentId] = useState<number>(0);
-
     useEffect(() => {
         const id = postId ? parseInt(postId) : 0
         setCurrentId(id)

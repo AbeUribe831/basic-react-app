@@ -2,7 +2,6 @@ import { PropsWithChildren } from "react";
 import { Post } from "../interface/Post.interface";
 import "../css/CurrentPost.css"
 
-const postUrl = 'https://jsonplaceholder.typicode.com/posts';
 export function CurrentPost(props: PropsWithChildren<{post: Post}>) {
     return (
         <div className="postContainer">

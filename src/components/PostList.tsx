@@ -12,6 +12,7 @@ export default function PostList(props: PropsWithChildren<{
             <ul className="ListWrapper">
                 {props.posts.map((post, index) => ( 
                     <PostRow 
+                        key={index}
                         post={post}
                         index={index}
                         handleOnClick={props.handleOnClick}/>
