@@ -1,4 +1,4 @@
-import "../css/Appbar.css"
+import "../scss/Appbar.scss"
 export function Appbar() {
     return (
         <div className="appBarDimension appBar">

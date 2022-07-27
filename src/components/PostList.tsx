@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { Post } from "../interface/Post.interface";
 import { PostRow } from "./PostRow";
-import '../css/PostList.css'
+import '../scss/PostList.scss'
 // use media to see if exceed max width then add max width for body
 export default function PostList(props: PropsWithChildren<{
     posts: Post[], 
