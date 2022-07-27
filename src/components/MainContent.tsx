@@ -7,14 +7,13 @@ import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
 
 const postUrl = 'https://jsonplaceholder.typicode.com/posts';
-export function MainContent() {
+export default function MainContent() {
     const { postId } = useParams();
     const navigate = useNavigate();
     
     const [posts, setPosts] = useState<Post[]>([]);
     useEffect(() => {
         axios.get(postUrl).then(response => {
-            console.log(response.data);
             const postsFromData: Post[] = [];
             if(posts.length !== 0) {
                 return;
@@ -43,6 +42,6 @@ export function MainContent() {
                 posts={posts}
                 handleOnClick={handleOnClickRow}/> 
             {posts.length!==0 && <CurrentPost post={posts[currentId]}/>}
-        </div>
+        </div>  
     )
 }
