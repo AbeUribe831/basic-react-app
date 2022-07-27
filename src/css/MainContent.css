@@ -1,0 +1,31 @@
+@media (min-width: 0px) {
+    .mainBody {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 48px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 600px) {
+    .mainBody {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 64px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1200px;
+    } 
+}
+
+
