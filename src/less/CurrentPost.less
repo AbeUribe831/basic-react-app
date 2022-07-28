@@ -1,0 +1,47 @@
+.postBody {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: rgb(0, 0, 0 / 20%) 0px 2px 1px -1px;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    padding: 16px 16px 24px 16px;
+
+    @media (min-width: 600px) {
+        border-radius: 4px;
+    }
+}
+.postTitle {
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.334;
+        padding: 16px;
+}
+
+.postContainer {
+        flex-grow: 0;
+        @media (min-width: 0px) {
+            padding-top: 24px;
+            flex-basis: 100%;
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            padding: 16px 0px 16px 0px;
+            flex-basis: 66.66%;
+            max-width: 66.66%;
+        }
+}
+.innerContainer {
+    @box-shadow:  rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+    @media (min-width: 0px) {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 1%;
+    }
+    @media (min-width: 600px) {
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: @box-shadow;
+    }
+}

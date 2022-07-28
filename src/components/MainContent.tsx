@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import "../scss/MainContent.scss"
 import { Post } from "../interface/Post.interface";
 import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
+//import "../scss/MainContent.scss"
+import "../converted-less-to-css/MainContent.css"
 
 const postUrl = 'https://jsonplaceholder.typicode.com/posts';
 export function MainContent() {
