@@ -14,6 +14,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.54.0",
+    "styled-components": "^5.3.5",
     "typescript": "^4.7.4"
   },
   "scripts": {
@@ -44,5 +45,11 @@
     "fs": false,
     "path": false,
     "os": false
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.25"
   }
 }
