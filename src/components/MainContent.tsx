@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import "../scss/MainContent.scss"
 import { Post } from "../interface/Post.interface";
 import { CurrentPost } from "./CurrentPost";
 import PostList from "./PostList";
+import { Grid } from "@mui/material";
+import { CurrentPostGridItem, PostListGridItem } from "./style/GridItem";
 
 const postUrl = 'https://jsonplaceholder.typicode.com/posts';
 export function MainContent() {
@@ -38,11 +39,26 @@ export function MainContent() {
         navigate(`/${idOfRow}`);    
     }
     return (
-        <div className="mainBody">
-            <PostList 
-                posts={posts}
-                handleOnClick={handleOnClickRow}/> 
-            {posts.length!==0 && <CurrentPost post={posts[currentId]}/>}
-        </div>
+        <Grid 
+            container 
+            flexDirection={"row"}
+            flexWrap={"wrap"}
+            paddingTop={"80px"}
+            maxWidth={1200}
+            alignSelf={'center'}
+            marginRight={'auto'}
+            marginLeft={'auto'}
+            >
+            <PostListGridItem>
+                <PostList
+                    posts={posts}
+                    handleOnClick={handleOnClickRow}/>
+            </PostListGridItem>
+            {posts.length!==0 &&
+                <CurrentPostGridItem>
+                    <CurrentPost post={posts[currentId]}/>
+                </CurrentPostGridItem>
+            }
+        </Grid>
     )
 }
